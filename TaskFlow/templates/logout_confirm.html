@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100" style="background: linear-gradient(45deg, #a9dce3, #7689de);">
+  <div class="form-wrap bg-white p-4 rounded shadow-sm text-center" style="max-width: 400px; width: 100%; border: 1px solid #a9dce3;">
+    <h2 class="mb-3" style="color: #42527c; font-family: 'Poppins', sans-serif;">Are you sure you want to Logout?</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary w-50 mt-3" style="background-color: #5a8bb8; border: none;">Yes, Logout</button>
+    </form>
+    <a href="{% url 'home' %}" class="btn btn-secondary w-50 mt-3" style="background-color: #7689de; border: none;">Cancel</a>
+  </div>
+</div>
+{% endblock %}

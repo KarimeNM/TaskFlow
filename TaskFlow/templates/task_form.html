@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100" style="background: linear-gradient(45deg, #a9dce3, #7689de);">
+  <div class="form-wrap bg-white p-4 rounded shadow-sm text-center" style="max-width: 500px; width: 100%; border: 1px solid #a9dce3;">
+    <h3 class="mb-3" style="text-align: center; color: #42527c; font-size: 1.8em; font-weight: bold; font-family: 'Poppins', sans-serif;">Edit or Create a New Task</h3>
+    <a href="{% url 'tasks' %}" style="text-decoration: none; font-size: 1.2em; color: #5a8bb8; margin-bottom: 20px; display: inline-block; font-weight: bold;">⬅ Back to To-Do List</a>
+
+    <form method="POST" action="" style="max-width: 400px; margin: 20px auto; padding: 20px; border: 1px solid #a9dce3; border-radius: 8px; background-color: #f0f0f0;">
+      {% csrf_token %}
+      <div class="mb-3 text-left">
+        <label for="{{ form.title.id_for_label }}" style="font-weight: bold; font-size: 1.1em; color: #42527c;">📌 {{ form.title.label }}</label>
+        {{ form.title }}
+      </div>
+      <div class="mb-3 text-left">
+        <label for="{{ form.description.id_for_label }}" style="font-weight: bold; font-size: 1.1em; color: #42527c;">📝 {{ form.description.label }}</label>
+        {{ form.description }}
+      </div>
+      <div style="text-align: center;">
+        <input type="submit" value="Save Task" class="btn btn-primary" style="background-color: #5a8bb8; color: white; font-weight: bold; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

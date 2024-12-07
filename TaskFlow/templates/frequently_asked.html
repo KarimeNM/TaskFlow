@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4" style="color: #42527c; font-weight: bold;">Frequently Asked Questions (FAQ)</h1> <!-- Bold text -->
+
+    <hr class="mb-5" style="border-top: 1px solid #a9dce3;"> <!-- Updated color -->
+
+    <div class="faq-section" style="background: linear-gradient(45deg, #a9dce3, #7689de); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h2 class="mb-4" style="color: #42527c; font-weight: bold;">General Questions</h2> <!-- Bold text -->
+        <div class="mb-5">
+            <h3 class="mb-3" style="color: #42527c; font-weight: bold;">Q: How do I create a task?</h3> <!-- Bold text -->
+            <p style="color: #ffffff; font-weight: bold;">A: Just below where it says "username" to-do list, there is a button to create a task.</p> <!-- Bold text -->
+        </div>
+        <div class="mb-5">
+            <h3 class="mb-3" style="color: #42527c; font-weight: bold;">Q: How do I edit a task?</h3> <!-- Bold text -->
+            <p style="color: #ffffff; font-weight: bold;">A: Right next to the view and delete button, there is an edit button so you can edit your task and description.</p> <!-- Bold text -->
+        </div>
+        <div class="mb-5">
+            <h3 class="mb-3" style="color: #42527c; font-weight: bold;">Q: How do I delete a task?</h3> <!-- Bold text -->
+            <p style="color: #ffffff; font-weight: bold;">A: Right after you've created a task, it will have two options: either to view your tasks and delete that task.</p> <!-- Bold text -->
+        </div>
+    </div>
+
+    <hr class="mb-5" style="border-top: 1px solid #a9dce3;"> <!-- Updated color -->
+
+    <div class="faq-section" style="background: linear-gradient(45deg, #a9dce3, #7689de); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h2 class="mb-4" style="color: #42527c; font-weight: bold;">Account Questions</h2> <!-- Bold text -->
+        <div class="mb-5">
+            <h3 class="mb-3" style="color: #42527c; font-weight: bold;">Q: How do I create an account?</h3> <!-- Bold text -->
+            <p style="color: #ffffff; font-weight: bold;">A: In the top right corner, there is a sign-up button. It will ask for the username you want and a strong password so you can start keeping track of tasks!</p> <!-- Bold text -->
+        </div>
+        <div class="mb-5">
+            <h3 class="mb-3" style="color: #42527c; font-weight: bold;">Q: How do I reset my password?</h3> <!-- Bold text -->
+            <p style="color: #ffffff; font-weight: bold;">A: I am trying to implement that T^T</p> <!-- Bold text -->
+        </div>
+    </div>
+
+    <hr class="mb-5" style="border-top: 1px solid #a9dce3;"> <!-- Updated color -->
+
+    <div class="faq-section" style="background: linear-gradient(45deg, #a9dce3, #7689de); padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h2 class="mb-4" style="color: #42527c; font-weight: bold;">Technical Questions</h2> <!-- Bold text -->
+        <div class="mb-5">
+            <h3 class="mb-3" style="color: #42527c; font-weight: bold;">Q: How long did it take to create this website?</h3> <!-- Bold text -->
+            <p style="color: #ffffff; font-weight: bold;">A: It was hard work for the three of us, but over the course of 4 months, we were able to bring TaskFlow to life.</p> <!-- Bold text -->
+        </div>
+        <div class="mb-5">
+            <h3 class="mb-3" style="color: #42527c; font-weight: bold;">Q: Can I access this app on mobile devices?</h3> <!-- Bold text -->
+            <p style="color: #ffffff; font-weight: bold;">A: Unfortunately, TaskFlow is only available on desktop. Hopefully, it will reach mobile devices soon.</p> <!-- Bold text -->
+        </div>
+    </div>
+
+    <hr class="mb-5" style="border-top: 1px solid #a9dce3;"> <!-- Updated color -->
+
+    <p class="mt-5 text-center" style="color: #555555; font-weight: bold;">If you have more questions, please <a href="{% url 'contact' %}" class="text-decoration-none" style="color: #5a8bb8;">contact us</a>.</p> <!-- Bold text -->
+</div>
+{% endblock %}

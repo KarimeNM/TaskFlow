@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100" style="background: linear-gradient(45deg, #a9dce3, #7689de);">
+  <div class="form-wrap bg-white p-4 rounded shadow-sm text-center" style="max-width: 500px; width: 100%; border: 1px solid #a9dce3;">
+    <h3 class="mb-3" style="text-align: center; color: #42527c; font-size: 1.8em; font-weight: bold; font-family: 'Poppins', sans-serif;">⚠️ Confirm Deletion</h3>
+    <p style="font-size: 1.2em; color: #555555; font-family: 'Poppins', sans-serif; font-weight: bold;">
+      Are you sure you want to delete this task?
+    </p>
+    <p style="font-weight: bold; font-size: 1.2em; color: #333333; font-family: 'Poppins', sans-serif;">
+      "{{ task }}"
+    </p>
+    <form method="POST" style="margin-top: 20px;">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-danger w-50 mt-3" style="background-color: #ff4d4d; color: white; font-weight: bold; border: none;">🗑️ Delete</button>
+    </form>
+    <a href="{% url 'tasks' %}" class="btn btn-secondary w-50 mt-3" style="background-color: #7689de; color: white; font-weight: bold; border: none;">⬅️ Cancel</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center vh-100" style="background: linear-gradient(45deg, #a9dce3, #7689de);">
+  <div class="form-wrap bg-white p-4 rounded shadow-sm text-center" style="max-width: 400px; width: 100%; border: 1px solid #a9dce3;">
+    <h3 class="mb-4" style="color: #42527c; font-family: 'Poppins', sans-serif; font-weight: bold;">Signup</h3>
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary w-100 mt-3" style="background-color: #5a8bb8; border: none; font-weight: bold;">Sign up</button>
+    </form>
+    <a class="signup-link mt-3 text-center" href="{% url 'log' %}" style="color: #5a8bb8; text-decoration: none; font-weight: bold;">Already have an account? Login here.</a>
+  </div>
+</div>
+{% endblock %}

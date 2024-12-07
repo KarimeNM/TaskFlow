@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <hr>
+  <h1 style="margin-bottom: 20px; color: #42527c; font-weight: bold;">{{ user.username }}'s To-Do List</h1>
+  
+  <p style="margin-bottom: 30px; font-weight: bold;">Keep track of your tasks below!</p>
+  
+  <a href="{% url 'task-create' %}" style="font-size: 1.2em; text-decoration: none; margin-bottom: 40px; display: inline-block; color: #5a8bb8; font-weight: bold;">➕ Add a New Task</a>
+  
+  <h2 style="margin-top: 5px; margin-bottom: 20px; color: #42527c; font-weight: bold;">📝 Incomplete Tasks</h2>
+  <table border="1" cellpadding="15" cellspacing="0" style="width: 100%; text-align: left; margin-bottom: 40px; border: 1px solid #a9dce3;">
+    <tr style="background-color: #f0f0f0;">
+        <th style="width: 10%; font-weight: bold;">✔️ Done?</th>
+        <th style="width: 60%; font-weight: bold;">Task</th>
+        <th style="width: 30%; font-weight: bold;">Actions</th>
+    </tr>
+    {% for task in incomplete_tasks %}
+    <tr>
+        <td>
+            <form method="POST" style="display: inline;">
+                {% csrf_token %}
+                <input type="hidden" name="task_id" value="{{ task.id }}">
+                <input type="checkbox" onchange="this.form.submit()">
+            </form>
+        </td>
+        <td>{{ task.title }}</td>
+        <td>
+            <a href="{% url 'task' task.id %}" style="color: #5a8bb8; text-decoration: none; font-weight: bold;">View</a> |
+            <a href="{% url 'task-update' task.id %}" style="color: #5a8bb8; text-decoration: none; font-weight: bold;">Edit</a> |
+            <a href="{% url 'task-delete' task.id %}" style="color: #5a8bb8; text-decoration: none; font-weight: bold;">Delete</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3" style="text-align: center; font-weight: bold; color: #555555;">🎉 No tasks pending! Time to relax! 🎉</td>
+    </tr>
+    {% endfor %}
+  </table>
+  
+  <h2 style="margin-top: 40px; margin-bottom: 20px; color: #42527c; font-weight: bold;">✅ Completed Tasks</h2>
+  <table border="1" cellpadding="15" cellspacing="0" style="width: 100%; text-align: left; margin-bottom: 40px; border: 1px solid #a9dce3;">
+    <tr style="background-color: #f0f0f0;">
+        <th style="width: 10%; font-weight: bold;">✔️ Undo?</th>
+        <th style="width: 60%; font-weight: bold;">Task</th>
+        <th style="width: 30%; font-weight: bold;">Actions</th>
+    </tr>
+    {% for task in completed_tasks %}
+    <tr>
+        <td>
+            <form method="POST" style="display: inline;">
+                {% csrf_token %}
+                <input type="hidden" name="task_id" value="{{ task.id }}">
+                <input type="checkbox" checked onchange="this.form.submit()">
+            </form>
+        </td>
+        <td style="text-decoration: line-through; color: gray;">{{ task.title }}</td>
+        <td>
+            <a href="{% url 'task' task.id %}" style="color: #5a8bb8; text-decoration: none; font-weight: bold;">View</a> |
+            <a href="{% url 'task-update' task.id %}" style="color: #5a8bb8; text-decoration: none; font-weight: bold;">Edit</a> |
+            <a href="{% url 'task-delete' task.id %}" style="color: #5a8bb8; text-decoration: none; font-weight: bold;">Delete</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="3" style="text-align: center; font-weight: bold; color: #555555;">🚀 No completed tasks yet—get to work! 🚀</td>
+    </tr>
+    {% endfor %}
+  </table>
+  
+  <p style="margin-top: 40px; font-weight: bold;">Stay productive and have fun!</p>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div class="jumbotron text-center" style="padding: 2rem; background-color: #f0f0f0; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h1 class="display-4" style="color: #42527c; font-weight: bold; font-family: 'Poppins', sans-serif;">Welcome to TaskFlow!</h1>
+        <p class="lead" style="font-size: 1.5em; color: #555555; font-weight: bold;">Your ultimate task management tool</p>
+        <hr class="my-4" style="width: 80%; margin: 20px auto; border-top: 1px solid #cccccc;">
+        <p style="font-size: 1.2em; color: #666666; font-weight: bold;">Organize your tasks, boost your productivity, and achieve your goals with ease.</p>
+        {% if not user.is_authenticated %}
+          <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button" style="margin-top: 20px; background-color: #5a8bb8; color: #ffffff; font-weight: bold;">Sign Up Now</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="text-center">
+      <h2 style="color: #42527c; font-weight: bold; font-family: 'Poppins', sans-serif;">Why Choose TaskFlow?</h2>
+      <ul style="font-size: 1.2em; color: #555555; margin-top: 20px; list-style-type: none; padding-left: 0;">
+        <li>• Simplify your task management process</li>
+        <li>• Stay organized with easy-to-use tools</li>
+        <li>• Increase your productivity and efficiency</li>
+        <li>• Access your tasks from anywhere</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <h2 class="text-center" style="color: #42527c; margin-bottom: 30px; font-weight: bold; font-family: 'Poppins', sans-serif;">How It Works</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        {# <img src="{% static 'images/add_task.jpg' %}" alt="Add Tasks" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"> #}
+        <h4 style="margin-top: 15px; color: #42527c; font-weight: bold;">Step 1: Add Your Tasks</h4>
+        <p style="font-size: 1em; color: #555555; font-weight: bold;">Quickly add your tasks with descriptions and due dates.</p>
+      </div>
+      <div class="col-md-4">
+        {# <img src="{% static 'images/track_progress.jpg' %}" alt="Track Progress" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"> #}
+        <h4 style="margin-top: 15px; color: #42527c; font-weight: bold;">Step 2: Track Your Progress</h4>
+        <p style="font-size: 1em; color: #555555; font-weight: bold;">Mark tasks as completed and track your achievements.</p>
+      </div>
+      <div class="col-md-4">
+        {# <img src="{% static 'images/reach_goals.jpg' %}" alt="Reach Goals" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"> #}
+        <h4 style="margin-top: 15px; color: #42527c; font-weight: bold;">Step 3: Reach Your Goals</h4>
+        <p style="font-size: 1em; color: #555555; font-weight: bold;">Stay on top of your goals and celebrate your success.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-5">
+    <p style="font-size: 1.2em; color: #555555; font-weight: bold;">Ready to take control of your tasks?</p>
+    {% if not user.is_authenticated %}
+      <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button" style="background-color: #5a8bb8; color: #ffffff; font-weight: bold;">Get Started Today!</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

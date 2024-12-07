@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="text-center">
+    <h1 class="mb-4" style="color: #42527c; font-weight: bold; font-family: 'Poppins', sans-serif;">About Us</h1>
+    <p class="lead" style="color: #555555; font-family: 'Poppins', sans-serif; font-weight: bold;">Meet the amazing team behind TaskFlow. We're dedicated to creating the best task management experience for you.</p>
+  </div>
+
+  <div class="row mt-5 text-center">
+    <!-- Team Member 1 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h2 class="card-title" style="color: #42527c; font-weight: bold;">Vianca Mata</h2>
+          <p class="card-text" style="font-weight: bold;">Developer</p>
+        </div>
+        <!-- Placeholder for Image -->
+        {# <img src="{% static 'images/vianca.jpg' %}" alt="Vianca Mata" class="img-fluid rounded-circle mt-3" style="max-width: 150px;"> #}
+        <!-- About Section -->
+        <div class="bg-light p-3 mt-3 rounded" style="min-height: 100px;">
+          <p style="font-family: 'Poppins', sans-serif; font-weight: bold;">My contribution to the project was setting up the To-Do list and making it a little more colorful. As well as adding the navbar to simulate an actual website. A little fact about myself is that my favorite color is purple and I’m a Libra! 🌟</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Member 2 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h2 class="card-title" style="color: #42527c; font-weight: bold;">Ernesto Perez</h2>
+          <p class="card-text" style="font-weight: bold;">Document Owner</p>
+        </div>
+        <!-- Placeholder for Image -->
+        {# <img src="{% static 'images/ernesto.jpg' %}" alt="Ernesto Perez" class="img-fluid rounded-circle mt-3" style="max-width: 150px;"> #}
+        <!-- About Section -->
+        <div class="bg-light p-3 mt-3 rounded" style="min-height: 100px;">
+          <p style="font-family: 'Poppins', sans-serif; font-weight: bold;">My contribution to this project was setting it up and tweaking some parts of the project. As well as, maintain the documents for the project. A little bit about myself is I am currently a senior at UTRGV. 🎓</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Member 3 -->
+    <div class="col-md-4">
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <h2 class="card-title" style="color: #42527c; font-weight: bold;">Karime Mejia</h2>
+          <p class="card-text" style="font-weight: bold;">Designer</p>
+        </div>
+        <!-- Placeholder for Image -->
+        {# <img src="{% static 'images/karime.jpg' %}" alt="Karime Mejia" class="img-fluid rounded-circle mt-3" style="max-width: 150px;"> #}
+        <!-- About Section -->
+        <div class="bg-light p-3 mt-3 rounded" style="min-height: 100px;">
+          <p style="font-family: 'Poppins', sans-serif; font-weight: bold;">I contributed to this project by designing it! A fun fact about me is that birds so much and I own 3! 🐦🐦🐦</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
